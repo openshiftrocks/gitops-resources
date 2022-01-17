@@ -7,5 +7,9 @@ secretGenerator:
   namespace: openshift-config
   files:
   - htpasswd=htpasswd-secret-data
+- name: v4-0-config-user-idp-0-file-data
+  namespace: openshift-config
+  files:
+  - htpasswd=htpasswd-secret-data
 generatorOptions:
   disableNameSuffixHash: true
