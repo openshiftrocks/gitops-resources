@@ -1,11 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: do380
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - namespace: '*'
+    server: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  sourceRepos:
+  - '*'
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: do380
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
-  project: default
+  project: do380
   source:
     path: oauth-config
     repoURL: 'https://github.com/openshiftrocks/gitops-resources.git'

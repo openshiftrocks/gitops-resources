@@ -12,10 +12,10 @@ metadata:
   name: argocd-operator
 spec:
   channel: alpha
-  #config:
-  #  env:
-  #  - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
-  #    value: argocd
+  config:
+    env:
+    - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
+      value: argocd
   name: argocd-operator
   source: community-operators
   sourceNamespace: openshift-marketplace
