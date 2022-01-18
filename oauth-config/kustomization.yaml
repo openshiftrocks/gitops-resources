@@ -28,5 +28,9 @@ configMapGenerator:
   namespace: openshift-config
   files:
   - ca.crt
+- name: v4-0-config-user-idp-1-ca
+  namespace: openshift-authentication
+  files:
+  - ca.crt
 generatorOptions:
   disableNameSuffixHash: true

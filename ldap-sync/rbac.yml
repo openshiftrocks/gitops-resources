@@ -27,7 +27,6 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: ldap-group-syncer
-  namespace: auth-ldapsync
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
