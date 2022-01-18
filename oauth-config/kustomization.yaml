@@ -7,10 +7,10 @@ secretGenerator:
   namespace: openshift-config
   files:
   - htpasswd=htpasswd-secret-data
-- name: ca-config-map
-  namespace: openshift-config
-  files:
-  - ca.crt=ca.crt
+#- name: ca-config-map
+#  namespace: openshift-config
+#  files:
+#  - ca.crt=ca.crt
 - name: ldap-secret
   namespace: openshift-config
   literals:
@@ -23,5 +23,10 @@ secretGenerator:
   namespace: openshift-authentication
   files:
   - htpasswd=htpasswd-secret-data
+configMapGenerator:
+- name: ca-config-map
+  namespace: openshift-config
+  files:
+  - ca.crt
 generatorOptions:
   disableNameSuffixHash: true

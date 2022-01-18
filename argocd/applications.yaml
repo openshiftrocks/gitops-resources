@@ -35,7 +35,7 @@ metadata:
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: auth-ldapsync
+    namespace: auth-review
   project: do380
   source:
     path: ldap-sync
