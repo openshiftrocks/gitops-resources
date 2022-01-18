@@ -18,7 +18,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: do380
+  name: oauth
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
@@ -26,7 +26,7 @@ spec:
   source:
     path: oauth-config
     repoURL: 'https://github.com/openshiftrocks/gitops-resources.git'
-    targetRevision: master
+    targetRevision: HEAD
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -40,4 +40,4 @@ spec:
   source:
     path: ldap-sync
     repoURL: 'https://github.com/openshiftrocks/gitops-resources.git'
-    targetRevision: master
+    targetRevision: HEAD
