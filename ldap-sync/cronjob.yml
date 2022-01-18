@@ -24,7 +24,7 @@ spec:
           volumes:
             - name: "ldap-sync-volume"
               configMap:
-                name: ca-config-map
+                name: ldap-config
             - name: "ldap-bind-password"
               secret:
                 secretName: ldap-secret
