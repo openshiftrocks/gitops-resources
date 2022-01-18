@@ -1,0 +1,14 @@
+resources:
+- cronjob.yml
+- rbac.yml
+secretGenerator:
+- name: ldap-secret
+  literals:
+  - bindPassword=Redhat123@!
+configMapGenerator:
+- name: ldap-config
+  files:
+  - cron-ldap-sync.yml=cron-ldap-sync.yml
+  - ca.crt=ca.crt
+generatorOptions:
+  disableNameSuffixHash: true

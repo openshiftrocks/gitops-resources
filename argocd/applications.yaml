@@ -27,3 +27,17 @@ spec:
     path: oauth-config
     repoURL: 'https://github.com/openshiftrocks/gitops-resources.git'
     targetRevision: master
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ldap-sync
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: auth-ldapsync
+  project: do380
+  source:
+    path: ldap-sync
+    repoURL: 'https://github.com/openshiftrocks/gitops-resources.git'
+    targetRevision: master
