@@ -18,26 +18,26 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: oauth
+  name: cluster-config-apps
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
   project: do380
   source:
-    path: oauth-config
+    path: do380/cluster-config-apps
     repoURL: 'https://github.com/openshiftrocks/gitops-resources.git'
     targetRevision: HEAD
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: ldap-sync
-spec:
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: auth-review
-  project: do380
-  source:
-    path: ldap-sync
-    repoURL: 'https://github.com/openshiftrocks/gitops-resources.git'
-    targetRevision: HEAD
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: ldap-sync
+# spec:
+#   destination:
+#     server: 'https://kubernetes.default.svc'
+#     namespace: auth-review
+#   project: do380
+#   source:
+#     path: ldap-sync
+#     repoURL: 'https://github.com/openshiftrocks/gitops-resources.git'
+#     targetRevision: HEAD

@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ldap-sync
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: {{ .Values.namespace }}
+  project: {{ .Values.argocdProject }}
+  source:
+    path: "{{ .Values.targetEnv }}/ldap-sync"
+    repoURL: "{{ .Values.repoUrl }}"
+    targetRevision: HEAD
