@@ -1,0 +1,21 @@
+{{- define "argocd-app" }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "{{ .Params.name }}-{{ .Values.targetEnv | lower}}"
+  namespace: argocd
+spec:
+  destination:
+    server: {{ .Values.targetCluster | default "https://kubernetes.default.svc" }}
+    namespace: {{ .Values.namespace }}
+  project: {{ .Values.argocdProject }}
+  source:
+    path: "{{ .Values.targetEnv }}/{{ .Params.name }}"
+    repoURL: "{{ .Values.repoUrl }}"
+    targetRevision: {{ .Values.revision | default "HEAD" }}
+  {{- if .Values.autoSync }}
+  syncPolicy:
+      automated: 
+          prune: true
+  {{- end }}
+{{- end }}
