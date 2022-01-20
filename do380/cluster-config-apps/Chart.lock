@@ -1,6 +1,0 @@
-dependencies:
-- name: argocd-applications
-  repository: http://workstation.lab.example.com:8080
-  version: 0.1.0
-digest: sha256:41a8e5b0146f5f5eac47c559317b177231f84571d739362b89a2dc3c716ec307
-generated: "2022-01-20T08:55:34.469763207-05:00"
