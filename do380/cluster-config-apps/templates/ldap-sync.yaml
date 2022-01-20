@@ -12,3 +12,8 @@ spec:
     path: "{{ .Values.targetEnv }}/ldap-sync"
     repoURL: "{{ .Values.repoUrl }}"
     targetRevision: HEAD
+  {{- if .Values.autoSync }}
+  syncPolicy:
+      automated: 
+          prune: true
+  {{- end }}
