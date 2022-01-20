@@ -1,5 +1,8 @@
 namespace: do380-cluster-config
 targetEnv: do380
 repoUrl: https://github.com/openshiftrocks/gitops-resources.git
+revision: 
 argocdProject: do380
 autoSync: true
+# Cluster name in argocd
+targetCluster:
